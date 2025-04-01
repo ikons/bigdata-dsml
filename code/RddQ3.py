@@ -35,11 +35,11 @@ employees = sc.textFile("hdfs://hdfs-namenode:9000/user/ikons/examples/employees
     .map(lambda x: x.split(","))  # → [emp_id, emp_name, salary, dep_id]
 
 # Κατευθείαν υπολογισμός των ετήσιων εισοδημάτων χρησιμοποιώντας lambda function:
-employees_yearly_incocme = employees.map(lambda x: [x[1], 14*(int(x[2]))]) # → [emp_name, 14*salary]
+employees_yearly_income = employees.map(lambda x: [x[1], 14*(int(x[2]))]) # → [emp_name, 14*salary]
 
 # Εμφάνιση της τελικής εξόδου (για δοκιμή/debugging)
-for item in employees_yearly_incocme.coalesce(1).collect():
+for item in employees_yearly_income.coalesce(1).collect():
     print(item)
 
 # Αποθήκευση της τελικής εξόδου στο HDFS
-employees_yearly_incocme.coalesce(1).saveAsTextFile(output_dir)
+employees_yearly_income.coalesce(1).saveAsTextFile(output_dir)

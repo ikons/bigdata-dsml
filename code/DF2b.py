@@ -4,14 +4,14 @@ from pyspark.sql.types import StructField, StructType, IntegerType, FloatType, S
 username = "ikons"
 spark = SparkSession \
     .builder \
-    .appName("DF query 3 execution") \
+    .appName("DF query 2b execution") \
     .getOrCreate()
 sc = spark.sparkContext
 # ΕΛΑΧΙΣΤΟΠΟΙΗΣΗ ΕΞΟΔΩΝ ΚΑΤΑΓΡΑΦΗΣ (LOGGING)
 sc.setLogLevel("ERROR")
 
 job_id = spark.sparkContext.applicationId
-output_dir = f"hdfs://hdfs-namenode:9000/user/{username}/DF3_{job_id}"
+output_dir = f"hdfs://hdfs-namenode:9000/user/{username}/DF2b_{job_id}"
 
 # Ορισμός σχήματος για το DataFrame των υπαλλήλων
 employees_schema = StructType([

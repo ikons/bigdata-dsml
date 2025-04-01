@@ -1,5 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructField, StructType, IntegerType, FloatType, StringType
+from pyspark.sql.functions import col, udf
 
 username = "ikons"
 spark = SparkSession \
@@ -11,7 +12,7 @@ sc = spark.sparkContext
 sc.setLogLevel("ERROR")
 
 job_id = spark.sparkContext.applicationId
-output_dir = f"hdfs://hdfs-namenode:9000/user/{username}/DF4_{job_id}"
+output_dir = f"hdfs://hdfs-namenode:9000/user/{username}/DF3_{job_id}"
 
 # Ορισμός σχήματος για το DataFrame των υπαλλήλων
 employees_schema = StructType([
@@ -32,7 +33,7 @@ def calculate_yearly_income(salary):
     return 14*salary
 
 # Καταχώρηση του udf
-vcalculate_yearly_income_udf = udf(calculate_yearly_income, FloatType())
+calculate_yearly_income_udf = udf(calculate_yearly_income, FloatType())
 
 # Υπολογισμός με δημιουργία νέας στήλης
 employees_yearly_income_df = employees_df \
