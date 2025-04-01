@@ -3,7 +3,7 @@ from pyspark.sql import SparkSession
 username = "ikons"
 sc = SparkSession \
     .builder \
-    .appName("RDD query 4 execution") \
+    .appName("RDD query 3 execution") \
     .getOrCreate() \
     .sparkContext
 
@@ -12,7 +12,7 @@ sc.setLogLevel("ERROR")
 
 # Λήψη του job ID και καθορισμός της διαδρομής εξόδου
 job_id = sc.applicationId
-output_dir = f"hdfs://hdfs-namenode:9000/user/{username}/RddQ4_{job_id}"
+output_dir = f"hdfs://hdfs-namenode:9000/user/{username}/RddQ3_{job_id}"
 
 # =======================
 # ΠΛΗΡΟΦΟΡΙΕΣ ΣΧΗΜΑΤΟΣ:
@@ -31,7 +31,7 @@ output_dir = f"hdfs://hdfs-namenode:9000/user/{username}/RddQ4_{job_id}"
 # =======================
 
 # Φόρτωση και ανάλυση των δεδομένων υπαλλήλων
-employees = sc.textFile("hdfs://hdfs-namenode:9000/user/ikons/examples/employees.csv") \
+employees = sc.textFile("hdfs://hdfs-namenode:9000/user/{username}/examples/employees.csv") \
     .map(lambda x: x.split(","))  # → [emp_id, emp_name, salary, dep_id]
 
 # Κατευθείαν υπολογισμός των ετήσιων εισοδημάτων χρησιμοποιώντας lambda function:

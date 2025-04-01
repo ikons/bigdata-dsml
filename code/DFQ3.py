@@ -37,7 +37,8 @@ calculate_yearly_income_udf = udf(calculate_yearly_income, FloatType())
 
 # Υπολογισμός με δημιουργία νέας στήλης
 employees_yearly_income_df = employees_df \
-    .withColumn("yearly_income", calculate_yearly_income_udf(col("salary"))).select("name", "yearly_income")
+    .withColumn("yearly_income", calculate_yearly_income_udf(col("salary"))) \
+    .select("emp_name", "yearly_income")
 
 # Εμφάνιση αποτελέσματος
 employees_yearly_income_df.show()
