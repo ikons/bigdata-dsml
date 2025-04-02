@@ -31,7 +31,7 @@ output_dir = f"hdfs://hdfs-namenode:9000/user/{username}/RddQ3_{job_id}"
 # =======================
 
 # Φόρτωση και ανάλυση των δεδομένων υπαλλήλων
-employees = sc.textFile("hdfs://hdfs-namenode:9000/user/{username}/examples/employees.csv") \
+employees = sc.textFile(f"hdfs://hdfs-namenode:9000/user/{username}/examples/employees.csv") \
     .map(lambda x: x.split(","))  # → [emp_id, emp_name, salary, dep_id]
 
 # Κατευθείαν υπολογισμός των ετήσιων εισοδημάτων χρησιμοποιώντας lambda function:
