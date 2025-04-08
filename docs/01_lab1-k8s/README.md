@@ -1,13 +1,13 @@
 
-# Οδηγός Σύνδεσης και Εκτέλεσης Apache Spark στο Kubernetes του Εργαστηρίου vdcloud
+# Οδηγός Σύνδεσης και Εκτέλεσης Apache Spark στο Kubernetes του Εργαστηρίου CSLAB
 
 
 
 ## Εισαγωγή
 
-Αυτός ο οδηγός παρέχει λεπτομερείς οδηγίες για τη σύνδεση στην υποδομή του εργαστηρίου VDCLOUD μέσω VPN, την εγκατάσταση των απαραίτητων εργαλείων, τη ρύθμιση του περιβάλλοντος εργασίας ενός τοπικού υπολογιστή και την εκτέλεση εργασιών Apache Spark στο Kubernetes (k8s). 
+Αυτός ο οδηγός παρέχει λεπτομερείς οδηγίες για τη σύνδεση στην υποδομή του εργαστηρίου CSLAB μέσω VPN, την εγκατάσταση των απαραίτητων εργαλείων, τη ρύθμιση του περιβάλλοντος εργασίας ενός τοπικού υπολογιστή και την εκτέλεση εργασιών Apache Spark στο Kubernetes (k8s). 
 
-Θα λάβετε επίσης ένα email με δυο αρχεία ρυθμίσεων και ένα username που θα έχετε στην υποδομή. Στον παρακάτω οδηγό, όπου βλέπετε το **<****username****>** θα το αντικαθιστάτε με το όνομα χρήστη που λάβατε στο email σας.
+Θα λάβετε επίσης ένα email με δυο αρχεία ρυθμίσεων και ένα username που θα έχετε στην υποδομή. Στον παρακάτω οδηγό, όπου βλέπετε το **<username>** θα το αντικαθιστάτε με το όνομα χρήστη που λάβατε στο email σας.
 
 ## Εγκατάσταση OpenVPN Client
 
@@ -22,60 +22,21 @@ https://openvpn.net/community-downloads/
 Μετά την σύνδεση με το vpn, συνήθως η σύνδεση με την υποδομή μέσω windows λειτουργεί χωρίς πρόβλημα. Σε ορισμένες εγκαταστάσεις Linux WSL μπορεί να μην ρυθμίζονται ορισμένα θέματα που αφορούν την ονοματοδοσία (DNS) αυτόματα. Ανοίξτε το WSL Linux που έχετε στήσει και τρέξτε.
 
 ```bash
-ping source-code-master
+ping kubernetes
 ```
 
-Εάν **ΔΕΝ** έχει ρυθμιστεί σωστά, η εντολή δεν ολοκληρώνεται και δεν βγάζει κανένα αποτέλεσμα, καθώς δεν λειτουργεί η μετάφραση του ονόματος του server σε IP. Σε αυτή την περίπτωση κάντε το εξής.
-
-Ανοίξτε το αρχείο ρυθμίσεων `/etc/resolv.conf` με την παρακάτω εντολή
-
-```bash
-sudo nano /etc/resolv.conf
-```
-
-Αλλάξτε την γραμμή: 
+Εάν **ΔΕΝ** έχει ρυθμιστεί σωστά, η εντολή δεν ολοκληρώνεται και δεν βγάζει κανένα αποτέλεσμα, καθώς δεν λειτουργεί η μετάφραση του ονόματος του server σε IP. Εάν έχετε συνδεθεί σωστά θα πρέπει να δείτε ένα αποτέλεσμα σαν το παρακάτω (τερματίστε την εκτέλεσή του μέσω `Ctrl+C` αλλιώς θα τρέχει συνέχεια). Εδώ βλέπουμε ότι η μετάφραση του `kubernetes` στο IP `10.233.0.1` γίνεται σωστά.
 
 ```
-nameserver 10.255.255.254 
-```
-
-με την γραμμή:
-
-```
-nameserver 10.42.0.1
-```
-Επίσης, εξασφαλίστε ότι υπάρχει και το παρακάτω κείμενο:
-
-```
-search default.svc.cluster.local
-```
-
-Αποθηκεύστε το αρχείο και βγείτε (πατήστε `Ctrl+X` και μετά `Y`)
-
-Δοκιμάστε πάλι την εντολή
-
-```bash
-ping source-code-master
-```
-
-και θα πρέπει να δείτε ένα αποτέλεσμα σαν το παρακάτω (τερματίστε την εκτέλεσή του μέσω `Ctrl+C` αλλιώς θα τρέχει συνέχεια)
-
-ikons@ikons-desktop:~$ ping source-code-master
-
-```
-PING source-code-master (10.42.0.1) 56(84) bytes of data.
-64 bytes from source-code-master.cluster.local (10.42.0.1): icmp_seq=1 ttl=63 time=9.34 ms
-64 bytes from source-code-master.cluster.local (10.42.0.1): icmp_seq=2 ttl=63 time=9.33 ms
-64 bytes from source-code-master.cluster.local (10.42.0.1): icmp_seq=3 ttl=63 time=52.2 ms
-64 bytes from source-code-master.cluster.local (10.42.0.1): icmp_seq=4 ttl=63 time=10.9 ms
-64 bytes from source-code-master.cluster.local (10.42.0.1): icmp_seq=5 ttl=63 time=10.9 ms
+ikons@ikons-desktop:~$ ping kubernetes
+PING kubernetes.default.svc.cluster.local (10.233.0.1) 56(84) bytes of data.
+From kubernetes.default.svc.cluster.local (10.233.0.1) icmp_seq=1 Destination Port Unreachable
+From kubernetes.default.svc.cluster.local (10.233.0.1) icmp_seq=2 Destination Port Unreachable
 ^C
---- source-code-master ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 4180ms
-rtt min/avg/max/mdev = 9.325/18.530/52.237/16.867 ms
+--- kubernetes.default.svc.cluster.local ping statistics ---
+2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1002ms
 ```
 
-Δυστυχώς, θα πρέπει την ρύθμιση αυτή να την κάνετε **κάθε φορά που συνδέεστε με το VPN**.
 
 ## Εγκατάσταση kubectl
 
@@ -291,7 +252,7 @@ hdfs dfs -put -f ~/wordcount_localdir.py
 
 ```bash
 spark-submit \
-    --master k8s://https://source-code-master:6443 \
+    --master k8s://https://termi7.cslab.ece.ntua.gr:6443 \
     --deploy-mode cluster \
     --name wordcount \
     --conf spark.hadoop.fs.permissions.umask-mode=000 \
@@ -310,7 +271,7 @@ spark-submit \
 
 Αυτή η εντολή spark-submit χρησιμοποιείται για να υποβληθεί μια εργασία Spark σε ένα Kubernetes cluster. Παρακάτω εξηγούνται οι παράμετροι της:
 
-- `--master k8s://https://10.42.0.1:6443`: Ορίζει το Kubernetes master endpoint. Το k8s:// υποδεικνύει ότι η εργασία θα εκτελείται σε Kubernetes. Το https://10.42.0.1:6443 είναι η διεύθυνση του Kubernetes API server.
+- `--master k8s://https://termi7.cslab.ece.ntua.gr:6443`: Ορίζει το Kubernetes master endpoint. Το k8s:// υποδεικνύει ότι η εργασία θα εκτελείται σε Kubernetes. Το termi7.cslab.ece.ntua.gr:6443 είναι η διεύθυνση του Kubernetes API server.
 - `--deploy-mode cluster`: Ορίζει την κατάσταση εκτέλεσης της εφαρμογής. Το `cluster` σημαίνει ότι η εργασία θα εκτελείται μέσα στο Kubernetes cluster, αντί να εκτελείται στον τοπικό υπολογιστή του χρήστη (αν ήταν `client` mode).
 - `--name wordcount`: Ορίζει το όνομα της εφαρμογής Spark που θα τρέξει στο Kubernetes. Εδώ η εφαρμογή έχει το όνομα `wordcount`.
 - `--conf spark.hadoop.fs.permissions.umask-mode=000`: Ορίζει τα δικαιώματα πρόσβασης του συστήματος αρχείων Hadoop.
@@ -341,7 +302,7 @@ https://spark.apache.org/docs/latest/configuration.html
 
 ```bash
 cat > ~/spark-3.5.5-bin-hadoop3/conf/spark-defaults.conf <<EOF
-spark.master k8s://https://10.42.0.1:6443
+spark.master k8s://https://termi7.cslab.ece.ntua.gr:6443
 spark.submit.deployMode cluster
 spark.hadoop.fs.permissions.umask-mode 000
 spark.kubernetes.authenticate.driver.serviceAccountName spark
