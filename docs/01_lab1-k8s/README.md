@@ -306,7 +306,7 @@ https://spark.apache.org/docs/latest/configuration.html
 Για να μην χρειάζεται να γράφετε όλες αυτές τις παραμέτρους κάθε φορά που εκτελείτε εργασίες spark, μπορείτε να τις εισάγετε σε ένα αρχείο ρυθμίσεων από όπου το spark θα τις αντλεί κάθε φορά που εκτελείτε την εντολή spark-submit. Για να το κάνετε αυτό τρέξτε τον παρακάτω κώδικα. Μην ξεχάσετε να αντικαταστήσετε το όνομα χρήστη (στην προκειμένη περίπτωση **<username>**) με το δικό σας όνομα χρήστη.
 
 ```bash
-# ⚠️  αντικατέστησε 👇 το testuser με το δικό σου username
+# ⚠️ αντικατέστησε 👇 το testuser με το δικό σου username
 USERNAME=testuser
 cat > ~/spark-3.5.5-bin-hadoop3/conf/spark-defaults.conf <<EOF
 spark.master k8s://https://termi7.cslab.ece.ntua.gr:6443
