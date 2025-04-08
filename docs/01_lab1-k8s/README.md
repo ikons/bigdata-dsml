@@ -138,13 +138,14 @@ tar -xzf hadoop-3.4.1.tar.gz
 
 
 
-Προσθέστε τις παρακάτω μεταβλητές περιβάλλοντος στο αρχείο ρυθμίσεων περιβάλλοντος του χρήστη σας. Όπου **<username>** θα το αλλάξετε με το δικό σας. Στην δική μου περίπτωση είναι `export HADOOP_USER_NAME=ikons`
+Προσθέστε τις παρακάτω μεταβλητές περιβάλλοντος στο αρχείο ρυθμίσεων περιβάλλοντος του χρήστη σας. Όπου `ikons` θα το αλλάξετε με το δικό σας. Στην δική μου περίπτωση είναι `export HADOOP_USER_NAME=ikons`
 
 ```bash
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export SPARK_HOME=$HOME/spark-3.5.5-bin-hadoop3
 export PATH=$HOME/spark-3.5.5-bin-hadoop3/bin:$HOME/hadoop-3.4.1/bin:$PATH
-export HADOOP_USER_NAME=<username>
+# ⚠️ Αντικατέστησε 👇 το ikons με το δικό σου username
+export HADOOP_USER_NAME=ikons
 ```
 
 
