@@ -7,7 +7,7 @@
 
 Αυτός ο οδηγός παρέχει λεπτομερείς οδηγίες για τη σύνδεση στην υποδομή του εργαστηρίου CSLAB μέσω VPN, την εγκατάσταση των απαραίτητων εργαλείων, τη ρύθμιση του περιβάλλοντος εργασίας ενός τοπικού υπολογιστή και την εκτέλεση εργασιών Apache Spark στο Kubernetes (k8s). 
 
-Θα λάβετε επίσης ένα email με δυο αρχεία ρυθμίσεων και ένα username που θα έχετε στην υποδομή. Στον παρακάτω οδηγό, όπου βλέπετε το **<username>** θα το αντικαθιστάτε με το όνομα χρήστη που λάβατε στο email σας.
+Θα λάβετε επίσης ένα email με δυο αρχεία ρυθμίσεων και ένα username που θα έχετε στην υποδομή. Στον παρακάτω οδηγό, όπου βλέπετε το **username** θα το αντικαθιστάτε με το όνομα χρήστη που λάβατε στο email σας.
 
 ## Εγκατάσταση OpenVPN Client
 
@@ -75,7 +75,7 @@ mkdir ~/.kube
 
  Έστω ότι έχετε κατεβάσει το αρχείο `config` στον κατάλογο `Downloads` (Λήψεις) του χρήστη των windows. 
 
-Για να το αντιγράψετε στην σωστή θέση, πρέπει να εκτελέσετε τις παρακάτω εντολές στο WSL Linux. Θα αντικαταστήσετε το **<username>** με το όνομα χρήστη των windows της δικής σας εγκατάστασης. Για παράδειγμα, στην δική μου περίπτωση είναι `/mnt/c/Users/ikons/Downloads/config`
+Για να το αντιγράψετε στην σωστή θέση, πρέπει να εκτελέσετε τις παρακάτω εντολές στο WSL Linux. Θα αντικαταστήσετε το **ikons** με το όνομα χρήστη των windows της δικής σας εγκατάστασης. Για παράδειγμα, στην δική μου περίπτωση είναι `/mnt/c/Users/ikons/Downloads/config`
 
 ```bash
 # Πηγαίνουμε στον προσωπικό κατάλογο του χρήστη
@@ -145,8 +145,8 @@ tar -xzf hadoop-3.4.1.tar.gz
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export SPARK_HOME=$HOME/spark-3.5.5-bin-hadoop3
 export PATH=$HOME/spark-3.5.5-bin-hadoop3/bin:$HOME/hadoop-3.4.1/bin:$PATH
-# ⚠️ Αντικατέστησε 👇 το ikons με το δικό σου username
-export HADOOP_USER_NAME=ikons
+# ⚠️ Αντικατέστησε το testuser 👇 με το δικό σου username
+export HADOOP_USER_NAME=testuser
 ```
 
 
@@ -198,14 +198,16 @@ from pyspark import SparkContext  # Εισαγωγή της κλάσης SparkCo
 sc = SparkContext(appName="WordCount")
 
 # Ορισμός εισόδου - αρχείο στο HDFS 
-# ⚠️ Αντικατέστησε 👇 το ikons με το δικό σου username
-input_dir = "hdfs://hdfs-namenode:9000/user/ikons/text.txt"
+# ⚠️ Αντικατέστησε το ikons με το δικό σου 👇 username
+input_dir = "hdfs://hdfs-namenode:9000/user/testuser/text.txt"
 
 # Απόκτηση του μοναδικού ID της εφαρμογής Spark
 job_id = sc.applicationId
 
 # Δημιουργία ονόματος εξόδου με βάση το job_id (για αποφυγή σύγκρουσης)
-output_dir = f"hdfs://hdfs-namenode:9000/user/<username>/wordcount_output_{job_id}"
+
+# ⚠️ Αντικατέστησε το ikons με το δικό σου 👇 username
+output_dir = f"hdfs://hdfs-namenode:9000/user/testuser/wordcount_output_{job_id}"
 
 # Διαβάζει το αρχείο κειμένου από το HDFS
 text_files = sc.textFile(input_dir)
@@ -226,7 +228,7 @@ sc.stop()
 ```
 
 
-✅ **Σημείωση**: Αντικαταστήστε το `<username>` με το όνομα χρήστη που έχετε λάβει (π.χ. ikons).
+✅ **Σημείωση**: Αντικαταστήστε το `testuser` με το όνομα χρήστη που έχετε λάβει (π.χ. ikons).
 
 Αντιγράψτε τα απαραίτητα αρχεία στο HDFS:
 
@@ -260,17 +262,17 @@ spark-submit \
     --name wordcount \
     --conf spark.hadoop.fs.permissions.umask-mode=000 \
     --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark \
-    --conf spark.kubernetes.namespace=<username>-priv \
+    --conf spark.kubernetes.namespace=username-priv \
     --conf spark.executor.instances=5 \
     --conf spark.kubernetes.container.image=apache/spark \
     --conf spark.kubernetes.submission.waitAppCompletion=false \
     --conf spark.eventLog.enabled=true \
-    --conf spark.eventLog.dir=hdfs://hdfs-namenode:9000/user/<username>/logs \
-    --conf spark.history.fs.logDirectory=hdfs://hdfs-namenode:9000/user/<username>/logs \
+    --conf spark.eventLog.dir=hdfs://hdfs-namenode:9000/user/username/logs \
+    --conf spark.history.fs.logDirectory=hdfs://hdfs-namenode:9000/user/username/logs \
     hdfs://hdfs-namenode:9000/user/<username>/wordcount_localdir.py
 ```
 
-Αλλάξτε το **<username>** με το όνομα χρήστη που λάβατε στο email, για παράδειγμα εγώ είμαι **ikons**.
+Αλλάξτε το **username** με το όνομα χρήστη που λάβατε στο email, για παράδειγμα εγώ είμαι **ikons**.
 
 Αυτή η εντολή spark-submit χρησιμοποιείται για να υποβληθεί μια εργασία Spark σε ένα Kubernetes cluster. Παρακάτω εξηγούνται οι παράμετροι της:
 
@@ -304,27 +306,29 @@ https://spark.apache.org/docs/latest/configuration.html
 Για να μην χρειάζεται να γράφετε όλες αυτές τις παραμέτρους κάθε φορά που εκτελείτε εργασίες spark, μπορείτε να τις εισάγετε σε ένα αρχείο ρυθμίσεων από όπου το spark θα τις αντλεί κάθε φορά που εκτελείτε την εντολή spark-submit. Για να το κάνετε αυτό τρέξτε τον παρακάτω κώδικα. Μην ξεχάσετε να αντικαταστήσετε το όνομα χρήστη (στην προκειμένη περίπτωση **<username>**) με το δικό σας όνομα χρήστη.
 
 ```bash
+# ⚠️  αντικατέστησε 👇 το testuser με το δικό σου username
+USERNAME=testuser
 cat > ~/spark-3.5.5-bin-hadoop3/conf/spark-defaults.conf <<EOF
 spark.master k8s://https://termi7.cslab.ece.ntua.gr:6443
 spark.submit.deployMode cluster
 spark.hadoop.fs.permissions.umask-mode 000
 spark.kubernetes.authenticate.driver.serviceAccountName spark
-spark.kubernetes.namespace <username>-priv
+spark.kubernetes.namespace $USERNAME-priv
 spark.executor.instances 5
 spark.executor.memory 1500m
 spark.driver.memory 512m
 spark.kubernetes.container.image=apache/spark
 spark.kubernetes.submission.waitAppCompletion false
 spark.eventLog.enabled true
-spark.eventLog.dir hdfs://hdfs-namenode:9000/user/<username>/logs
-spark.history.fs.logDirectory hdfs://hdfs-namenode:9000/user/<username>/logs
+spark.eventLog.dir hdfs://hdfs-namenode:9000/user/$USERNAME/logs
+spark.history.fs.logDirectory hdfs://hdfs-namenode:9000/user/$USERNAME/logs
 EOF
 ```
 
-Τώρα μπορείτε να τρέξετε την προηγούμενη εντολή εκτελώντας απλά
+Τώρα μπορείτε να τρέξετε την προηγούμενη εντολή εκτελώντας απλά (αφού αντικαταστήσετε το `testuser` με το δικό σας username)
 
 ```bash
-spark-submit hdfs://hdfs-namenode:9000/user/<username>/wordcount_localdir.py
+spark-submit hdfs://hdfs-namenode:9000/user/testuser/wordcount_localdir.py
 ```
 
 ## Παρακολούθηση Εκτέλεσης μέσω k9s
