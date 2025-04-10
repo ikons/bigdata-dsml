@@ -129,7 +129,7 @@ hadoop fs -ls code
 
 ```bash
 # ⚠️ Αντικατέστησε το "ikons" με το δικό σου 👇 username
-spark-submit hdfs://hdfs-namenode:9000/user/<user>/code/RddQ1.py
+spark-submit hdfs://hdfs-namenode:9000/user/ikons/code/RddQ1.py
 ```
 
 ---
