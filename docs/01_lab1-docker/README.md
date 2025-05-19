@@ -117,7 +117,7 @@ docker run my-python-app
 Περιηγηθείτε στον κατάλογο του παραδείγματος
 
 ```bash
-cd ~/bigdata-uth/docker/01-lab1-spark-hdfs/
+cd ~/bigdata-dsml/docker/01-lab1-spark-hdfs/
 ```
 
 
