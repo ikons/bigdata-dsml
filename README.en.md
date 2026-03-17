@@ -14,6 +14,9 @@ This repository contains code, datasets, and execution guides for **Apache Spark
 
 📁 The same guides are also available under [`odigoi/`](./odigoi) in English `.docx` format, alongside the original Greek handouts.
 
+The Word guides under `odigoi/` are generated from the Markdown files in `docs/` with Pandoc.
+On Windows, `scripts/export-docx.ps1` and `make -C docs docx` also use Microsoft Word to refresh the table of contents after export.
+
 ---
 
 ## 📁 Repository structure
