@@ -17,9 +17,6 @@ wsl --install --no-distribution
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
-![Figure 2](images/img23.png)
-
-![Figure 3](images/img20.png)
 
 After the restart, install Ubuntu:
 
@@ -134,23 +131,11 @@ Go to the official Docker page and download the latest version of Docker Desktop
 
 https://docs.docker.com/desktop/setup/install/windows-install/
 
-**Run the installer:** Double-click the installation file you downloaded and follow the installation wizard.
+**We recommend installing via Microsoft Store**.
 
 ![Figure 18](images/img18.png)
 
-**Installation options:**
-
-During installation, make sure that the **Use the WSL 2 based engine** option is selected.
-
-![Figure 11](images/img11.png)
-
-Docker Desktop will also install the **Docker Desktop WSL 2 Backend**, which is required in order to run Docker with WSL 2.
-
-**Complete the installation:** When the installation finishes, click **Finish** and Docker Desktop will start automatically. The installation may take a little while. You will need to restart your computer.
-
-![Figure 8](images/img8.png)
-
-After the restart, you may be asked to create an account for the service. This is not mandatory, and you may choose **Skip**.
+After installing, you may be asked to create an account for the service. This is not mandatory, and you may choose **Skip**.
 
 ![Figure 9](images/img3.png)
 
@@ -404,8 +389,8 @@ From PowerShell:
 
 ```powershell
 Set-Location $HOME
-git clone https://github.com/ikons/bigdata-uth.git
-Set-Location bigdata-uth
+git clone https://github.com/ikons/bigdata-dsml.git
+Set-Location bigdata-dsml
 ```
 
 This option is enough for the local guides `02` and `03`.
@@ -416,8 +401,8 @@ From the Ubuntu terminal:
 
 ```bash
 cd ~
-git clone https://github.com/ikons/bigdata-uth.git
-cd bigdata-uth
+git clone https://github.com/ikons/bigdata-dsml.git
+cd bigdata-dsml
 ```
 
 This option is required for the remote guides `04` and `05`, and it is also the recommended path for `06`.
