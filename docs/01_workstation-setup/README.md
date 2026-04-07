@@ -66,7 +66,7 @@ wsl --install -d Ubuntu
 - ότι μετά την ενεργοποίηση έγινε πλήρης επανεκκίνηση του VM
 - ότι το `VirtualMachinePlatform` εμφανίζεται ως `Enabled`
 
-Για το συγκεκριμένο δικό μου δοκιμαστικό VM, το αντίστοιχο όνομα ήταν `Windows 11 Bigdata uth 2026`, αλλά αυτό δεν αφορά τη γενική φοιτητική ροή.
+Για το συγκεκριμένο δικό μου δοκιμαστικό VM, το αντίστοιχο όνομα ήταν `Windows 11 Bigdata dsml 2026`, αλλά αυτό δεν αφορά τη γενική φοιτητική ροή.
 
 
 ## Ρύθμιση του Ubuntu
@@ -397,8 +397,8 @@ kubectl -n <username>-priv get sa spark
 
 ```powershell
 Set-Location $HOME
-git clone https://github.com/ikons/bigdata-uth.git
-Set-Location bigdata-uth
+git clone https://github.com/ikons/bigdata-dsml.git
+Set-Location bigdata-dsml
 ```
 
 Αυτή η επιλογή αρκεί για τους τοπικούς οδηγούς `02` και `03`.
@@ -409,8 +409,8 @@ Set-Location bigdata-uth
 
 ```bash
 cd ~
-git clone https://github.com/ikons/bigdata-uth.git
-cd bigdata-uth
+git clone https://github.com/ikons/bigdata-dsml.git
+cd bigdata-dsml
 ```
 
 Αυτή η επιλογή είναι απαραίτητη για τους οδηγούς `04` και `05`, και είναι η προτεινόμενη διαδρομή και για το `06`.
