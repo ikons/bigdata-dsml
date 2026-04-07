@@ -198,7 +198,7 @@ nano ~/.spark/conf/spark-defaults.conf
 ``` properties
 # Replace YOUR_USERNAME with your lab username before first use.
 
-spark.master                                   k8s://https://source-code-master.cluster.local:6443
+spark.master                                   k8s://https://termi7.cslab.ece.ntua.gr:6443
 spark.submit.deployMode                        cluster
 spark.kubernetes.namespace                     YOUR_USERNAME-priv
 spark.kubernetes.authenticate.driver.serviceAccountName spark
