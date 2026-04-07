@@ -198,16 +198,20 @@ nano ~/.spark/conf/spark-defaults.conf
 ``` properties
 # Replace YOUR_USERNAME with your lab username before first use.
 
-spark.master                                   k8s://https://termi7.cslab.ece.ntua.gr:6443
-spark.submit.deployMode                        cluster
-spark.kubernetes.namespace                     YOUR_USERNAME-priv
-spark.kubernetes.authenticate.driver.serviceAccountName spark
-spark.kubernetes.container.image               apache/spark:3.5.8-scala2.12-java11-python3-ubuntu
-spark.executor.instances                       1
-spark.kubernetes.submission.waitAppCompletion  false
-spark.eventLog.enabled                         true
-spark.eventLog.dir                             hdfs://hdfs-namenode.default.svc.cluster.local:9000/user/YOUR_USERNAME/logs
-spark.history.fs.logDirectory                  hdfs://hdfs-namenode.default.svc.cluster.local:9000/user/YOUR_USERNAME/logs
+spark.master                                                k8s://https://termi7.cslab.ece.ntua.gr:6443
+spark.submit.deployMode                                     cluster
+spark.kubernetes.namespace                                  YOUR_USERNAME-priv
+spark.hadoop.hadoop.job.ugi                                 YOUR_USERNAME
+spark.kubernetes.driverEnv.HADOOP_USER_NAME                 YOUR_USERNAME
+spark.kubernetes.executorEnv.HADOOP_USER_NAME               YOUR_USERNAME
+spark.hadoop.dfs.client.use.datanode.hostname               true
+spark.kubernetes.authenticate.driver.serviceAccountName     spark
+spark.kubernetes.container.image                            apache/spark:3.5.8-scala2.12-java11-python3-ubuntu
+spark.executor.instances                                    1
+spark.kubernetes.submission.waitAppCompletion               false
+spark.eventLog.enabled                                      true
+spark.eventLog.dir                                          hdfs://hdfs-namenode.default.svc.cluster.local:9000/user/YOUR_USERNAME/logs
+spark.history.fs.logDirectory                               hdfs://hdfs-namenode.default.svc.cluster.local:9000/user/YOUR_USERNAME/logs
 ```
 <!-- END AUTO-CODE -->
 
