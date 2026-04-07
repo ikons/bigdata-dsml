@@ -33,8 +33,8 @@ https://code.visualstudio.com/
 
 Αν ολοκληρώσατε ήδη το `01_workstation-setup`, μπορείτε να έχετε το repository:
 
-- είτε σε φάκελο των Windows, π.χ. `C:\Users\<username>\bigdata-uth`
-- είτε μέσα στο WSL, π.χ. `~/bigdata-uth`
+- είτε σε φάκελο των Windows, π.χ. `C:\Users\<username>\bigdata-dsml`
+- είτε μέσα στο WSL, π.χ. `~/bigdata-dsml`
 
 Στο VS Code ανοίξτε τον φάκελο που αντιστοιχεί στη διαδρομή που διαλέξατε:
 
@@ -68,7 +68,7 @@ https://code.visualstudio.com/
 - αποφεύγονται συγκρούσεις μεταξύ διαφορετικών projects,
 - το VS Code συνήθως εντοπίζει αυτόματα το `.venv` του project.
 
-Ανοίξτε τον φάκελο `bigdata-uth` στο VS Code.
+Ανοίξτε τον φάκελο `bigdata-dsml` στο VS Code.
 
 
 Ανοίξτε ένα terminal μέσα από το VS Code (`Terminal -> New Terminal`) και δημιουργήστε το virtual environment.

@@ -147,7 +147,7 @@ docker run my-python-app
 Περιηγηθείτε στον κατάλογο του παραδείγματος
 
 ```bash
-cd ~/bigdata-uth/docker/stacks/local-spark-hdfs/
+cd ~/bigdata-dsml/docker/stacks/local-spark-hdfs/
 ```
 
 
@@ -416,7 +416,7 @@ docker exec spark-master /opt/spark/bin/spark-submit /opt/spark/examples/src/mai
 Από τερματικό WSL τρέξτε:
 
 ```bash
-docker cp ~/bigdata-uth/code/wordcount.py spark-master:/mnt/upload/wordcount.py
+docker cp ~/bigdata-dsml/code/wordcount.py spark-master:/mnt/upload/wordcount.py
 ```
 
 
@@ -565,7 +565,7 @@ if __name__ == "__main__":
 Από τερματικό WSL τρέξτε:
 
 ```bash
-docker cp ~/bigdata-uth/examples/text.txt namenode:/mnt/upload/text.txt
+docker cp ~/bigdata-dsml/examples/text.txt namenode:/mnt/upload/text.txt
 ```
 
 ![Εικόνα 19](images/img19.png)
@@ -623,7 +623,7 @@ docker exec spark-master /opt/spark/bin/spark-submit /mnt/upload/wordcount.py \
 - τα δεδομένα μένουν τα ίδια
 - αλλάζει μόνο ο στόχος εκτέλεσης και η βασική διαδρομή HDFS
 
-Από τη ρίζα του αποθετηρίου `~/bigdata-uth`, ανεβάστε ολόκληρο το βασικό `code/` στον `spark-master` και τα `examples/` στον `namenode`:
+Από τη ρίζα του αποθετηρίου `~/bigdata-dsml`, ανεβάστε ολόκληρο το βασικό `code/` στον `spark-master` και τα `examples/` στον `namenode`:
 
 ```bash
 docker exec spark-master mkdir -p /mnt/upload/code

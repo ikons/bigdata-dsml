@@ -127,7 +127,7 @@ The first time you run it, Docker downloads the required dependencies. On subseq
 Move to the example directory:
 
 ```bash
-cd ~/bigdata-uth/docker/stacks/local-spark-hdfs/
+cd ~/bigdata-dsml/docker/stacks/local-spark-hdfs/
 ```
 
 Inside it you will find the following files:
@@ -395,7 +395,7 @@ In the repository-based workflow, the recommended path is `docker cp` from the c
 From a WSL terminal, run:
 
 ```bash
-docker cp ~/bigdata-uth/code/wordcount.py spark-master:/mnt/upload/wordcount.py
+docker cp ~/bigdata-dsml/code/wordcount.py spark-master:/mnt/upload/wordcount.py
 ```
 
 ![Figure 18](images/img18.png)
@@ -546,7 +546,7 @@ For this purpose, we again use `docker cp`, this time to copy the reference data
 From a WSL terminal, run:
 
 ```bash
-docker cp ~/bigdata-uth/examples/text.txt namenode:/mnt/upload/text.txt
+docker cp ~/bigdata-dsml/examples/text.txt namenode:/mnt/upload/text.txt
 ```
 
 ![Figure 19](images/img19.png)
@@ -607,7 +607,7 @@ The core idea is:
 - the data stays the same
 - only the execution target and the HDFS base path change
 
-From the repository root `~/bigdata-uth`, upload the reference `code/` directory to `spark-master` and the `examples/` directory to `namenode`:
+From the repository root `~/bigdata-dsml`, upload the reference `code/` directory to `spark-master` and the `examples/` directory to `namenode`:
 
 ```bash
 docker exec spark-master mkdir -p /mnt/upload/code

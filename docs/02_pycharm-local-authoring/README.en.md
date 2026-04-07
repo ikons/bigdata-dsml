@@ -25,10 +25,10 @@ Guide `02` supports two equivalent local paths:
 
 If you already completed `01_workstation-setup`, the repository may now exist:
 
-- either in a Windows folder, such as `C:\Users\<username>\bigdata-uth`
-- or inside WSL, such as `~/bigdata-uth`
+- either in a Windows folder, such as `C:\Users\<username>\bigdata-dsml`
+- or inside WSL, such as `~/bigdata-dsml`
 
-Open PyCharm and choose the existing `bigdata-uth` project directory.
+Open PyCharm and choose the existing `bigdata-dsml` project directory.
 
 For the native Windows path, use the Windows project and a PowerShell terminal.
 For the WSL path, use the corresponding project inside WSL and a WSL terminal.

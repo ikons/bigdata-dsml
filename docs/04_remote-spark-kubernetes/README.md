@@ -28,14 +28,14 @@
 - `Spark 3.5.8`
 - `Java 11`
 - `Hadoop client 3.4.1`
-- pinned image `apache/spark:3.5.8-scala2.12-java11-python3-ubuntu`
+- `apache/spark:3.5.8-scala2.12-java11-python3-ubuntu`
 
 ## Τι χρειάζεστε πριν ξεκινήσετε
 
 - WSL 2 με Ubuntu
 - VPN profile του εργαστηρίου
 - kubeconfig του εργαστηρίου
-- κλωνοποιημένο αποθετήριο `~/bigdata-uth`
+- κλωνοποιημένο αποθετήριο `~/bigdata-dsml`
 - Java, Spark client και Hadoop client μέσα στο WSL
 - προσωπικό namespace `<username>-priv`
 - service account `spark` μέσα σε αυτό το namespace
@@ -222,7 +222,7 @@ spark.history.fs.logDirectory                  hdfs://hdfs-namenode.default.svc.
 Από τη ρίζα του cloned repo:
 
 ```bash
-cd ~/bigdata-uth
+cd ~/bigdata-dsml
 hdfs dfs -rm -r -f /user/$USER/examples /user/$USER/code /user/$USER/logs || true
 hdfs dfs -mkdir -p /user/$USER/logs /user/$USER/examples /user/$USER/code
 hdfs dfs -put -f examples/* /user/$USER/examples/

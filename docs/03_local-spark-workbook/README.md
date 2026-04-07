@@ -18,7 +18,7 @@
 - έχεις ήδη το κλωνοποιημένο αποθετήριο είτε σε φάκελο των Windows είτε μέσα στο WSL
 - το `.venv` είναι έτοιμο
 - το `java -version` δουλεύει
-- τρέχεις από τη ρίζα του repository `bigdata-uth`
+- τρέχεις από τη ρίζα του repository `bigdata-dsml`
 
 Πριν τρέξεις τα examples, άνοιξε terminal μέσα στο repo και ενεργοποίησε το virtual environment.
 
@@ -31,7 +31,7 @@
 Από WSL:
 
 ```bash
-cd ~/bigdata-uth
+cd ~/bigdata-dsml
 source .venv/bin/activate
 ```
 
@@ -411,7 +411,7 @@ python code/DFQ3_udf.py
 
 Σημαντικό: οι οδηγοί `04` και `05` εκτελούνται μόνο από WSL.
 
-Αν μέχρι εδώ δουλέψατε απευθείας από τα Windows, πριν περάσετε στον απομακρυσμένο οδηγό ανοίξτε το κλωνοποιημένο αποθετήριο στο WSL, π.χ. `~/bigdata-uth`.
+Αν μέχρι εδώ δουλέψατε απευθείας από τα Windows, πριν περάσετε στον απομακρυσμένο οδηγό ανοίξτε το κλωνοποιημένο αποθετήριο στο WSL, π.χ. `~/bigdata-dsml`.
 
 Από εκεί και πέρα, βγείτε από το local `.venv` ώστε το επόμενο `spark-submit` να είναι αυτό της εγκατάστασης Spark στο WSL και όχι το wrapper του `pyspark` μέσα στο virtual environment:
 

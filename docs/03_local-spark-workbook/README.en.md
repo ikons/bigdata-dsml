@@ -18,7 +18,7 @@ This guide assumes that:
 - you already have the cloned repository either in a Windows folder or inside WSL
 - the `.venv` is ready
 - `java -version` works
-- you run from the repository root `bigdata-uth`
+- you run from the repository root `bigdata-dsml`
 
 Before running the examples, open a terminal inside the repo and activate the virtual environment.
 
@@ -31,7 +31,7 @@ From PowerShell:
 From WSL:
 
 ```bash
-cd ~/bigdata-uth
+cd ~/bigdata-dsml
 source .venv/bin/activate
 ```
 
@@ -411,7 +411,7 @@ In remote execution, only these things change:
 
 Important: guides `04` and `05` run only from WSL.
 
-If you worked natively on Windows up to this point, open the WSL clone of the repository first, for example `~/bigdata-uth`.
+If you worked natively on Windows up to this point, open the WSL clone of the repository first, for example `~/bigdata-dsml`.
 
 From there, leave the local `.venv` so that the next `spark-submit` is the WSL Spark binary and not the `pyspark` wrapper inside the virtual environment:
 

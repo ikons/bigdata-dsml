@@ -31,8 +31,8 @@ Guide `02` supports two equivalent local paths:
 
 If you already completed `01_workstation-setup`, the repository may now exist:
 
-- either in a Windows folder, such as `C:\Users\<username>\bigdata-uth`
-- or inside WSL, such as `~/bigdata-uth`
+- either in a Windows folder, such as `C:\Users\<username>\bigdata-dsml`
+- or inside WSL, such as `~/bigdata-dsml`
 
 In VS Code, open the folder that matches the path you chose:
 
@@ -62,7 +62,7 @@ For this course it is recommended to use a **local virtual environment with `ven
 - conflicts between different projects are avoided
 - VS Code usually detects the project's `.venv` automatically
 
-Open the `bigdata-uth` folder in VS Code.
+Open the `bigdata-dsml` folder in VS Code.
 
 Open a terminal inside VS Code (`Terminal -> New Terminal`) and create the virtual environment.
 

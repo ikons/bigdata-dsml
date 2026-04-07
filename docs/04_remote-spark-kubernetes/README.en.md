@@ -28,14 +28,14 @@ In other words, the course baseline is:
 - `Spark 3.5.8`
 - `Java 11`
 - `Hadoop client 3.4.1`
-- pinned image `apache/spark:3.5.8-scala2.12-java11-python3-ubuntu`
+- `apache/spark:3.5.8-scala2.12-java11-python3-ubuntu`
 
 ## What you need before you start
 
 - WSL 2 with Ubuntu
 - the lab VPN profile
 - the lab kubeconfig
-- cloned repository `~/bigdata-uth`
+- cloned repository `~/bigdata-dsml`
 - Java, a Spark client, and a Hadoop client inside WSL
 - a personal namespace `<username>-priv`
 - a `spark` service account inside that namespace
@@ -222,7 +222,7 @@ Before the first submit:
 From the repository root:
 
 ```bash
-cd ~/bigdata-uth
+cd ~/bigdata-dsml
 hdfs dfs -rm -r -f /user/$USER/examples /user/$USER/code /user/$USER/logs || true
 hdfs dfs -mkdir -p /user/$USER/logs /user/$USER/examples /user/$USER/code
 hdfs dfs -put -f examples/* /user/$USER/examples/

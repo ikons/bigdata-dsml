@@ -25,10 +25,10 @@ https://www.jetbrains.com/pycharm/download/
 
 Αν ολοκληρώσατε ήδη το `01_workstation-setup`, το repository μπορεί να βρίσκεται:
 
-- είτε σε φάκελο των Windows, π.χ. `C:\Users\<username>\bigdata-uth`
-- είτε μέσα στο WSL, π.χ. `~/bigdata-uth`
+- είτε σε φάκελο των Windows, π.χ. `C:\Users\<username>\bigdata-dsml`
+- είτε μέσα στο WSL, π.χ. `~/bigdata-dsml`
 
-Ανοίξτε το PyCharm και επιλέξτε να ανοίξετε το υπάρχον project directory `bigdata-uth`.
+Ανοίξτε το PyCharm και επιλέξτε να ανοίξετε το υπάρχον project directory `bigdata-dsml`.
 
 Για διαδρομή Windows, χρησιμοποιήστε το project των Windows και PowerShell terminal.
 Για διαδρομή WSL, χρησιμοποιήστε το αντίστοιχο project μέσα από το WSL και WSL terminal.

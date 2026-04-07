@@ -77,7 +77,7 @@ Appendix:
 From your WSL terminal:
 
 ```bash
-cd ~/bigdata-uth
+cd ~/bigdata-dsml
 hadoop fs -rm -r -f /user/$USER/examples /user/$USER/code || true
 hadoop fs -mkdir -p /user/$USER/examples /user/$USER/code
 hadoop fs -put -f examples/* /user/$USER/examples/
