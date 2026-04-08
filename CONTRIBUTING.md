@@ -29,7 +29,7 @@ Examples:
 - `AUTO-CODE` blocks are synchronized from canonical source files with `python scripts/sync_markdown_code.py`.
 - Paths inside `AUTO-CODE` blocks are repository-root relative, for example `<!-- AUTO-CODE: code/RddQ2.py -->`.
 - Student-facing terminal commands should prefer the tested **WSL-first** path unless a guide explicitly targets Windows PowerShell.
-- When a guide assumes the repository already exists locally, refer to it consistently as `~/bigdata-uth`.
+- When a guide assumes the repository already exists locally, refer to it consistently as `~/bigdata-dsml`.
 - Local guides should assume `.venv` activation inside the repo; remote guides should remind the reader to leave `.venv` and reload `~/bigdata-env.sh` before `spark-submit`.
 
 ### Word guides
@@ -66,7 +66,7 @@ Examples:
 ## Recommended workflow for future updates
 1. Edit the Greek Markdown guide if it is the canonical teaching version.
 2. Update the corresponding English Markdown guide.
-3. If the guide contains repo-local commands, verify that they still make sense from `~/bigdata-uth`.
+3. If the guide contains repo-local commands, verify that they still make sense from `~/bigdata-dsml`.
 4. If the guide moves from local execution to remote execution, verify that the handoff from `.venv` to `~/bigdata-env.sh` is explicit.
 5. Run `python scripts/sync_markdown_code.py` or `make -C docs sync`.
 6. Verify that headings, commands, and non-generated prose still match across languages.
