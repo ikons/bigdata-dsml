@@ -23,13 +23,13 @@ On Windows, `scripts/export-docx.ps1` and `make -C docs docx` also use Microsoft
 
 - After `01_workstation-setup`, the local guides (`02`, `03`) support two paths:
   - `Windows / PowerShell`, with a clone in a Windows folder
-  - `WSL / Ubuntu`, with a clone such as `~/bigdata-uth`
+  - `WSL / Ubuntu`, with a clone such as `~/bigdata-dsml`
 - The remote guides (`04`, `05`) run only from WSL.
 - The Docker guide (`06`) could theoretically be adapted to PowerShell as well, but the course documents only the WSL path so that the workflow stays consistent.
 - If you start locally on Windows and later want to continue to the remote guides, first switch to a WSL clone of the repo and load the WSL Spark environment:
 
 ```bash
-cd ~/bigdata-uth
+cd ~/bigdata-dsml
 deactivate 2>/dev/null || true
 source ~/bigdata-env.sh
 hash -r
@@ -101,7 +101,7 @@ This lab sets up a local multi-container environment that includes:
 Example command:
 
 ```bash
-cd ~/bigdata-uth/docker/stacks/local-spark-hdfs
+cd ~/bigdata-dsml/docker/stacks/local-spark-hdfs
 docker compose up --build -d
 ```
 
@@ -152,7 +152,7 @@ This lab implements the core `Q1-Q3` relational-style tasks with `RDD`, the `Dat
 ## ⚙️ Preparing Data in HDFS
 
 ```bash
-cd ~/bigdata-uth
+cd ~/bigdata-dsml
 hadoop fs -rm -r -f /user/$USER/examples /user/$USER/code || true
 hadoop fs -mkdir -p /user/$USER/examples /user/$USER/code
 hadoop fs -put -f examples/* /user/$USER/examples/
@@ -197,4 +197,4 @@ This form assumes that your WSL already uses the per-user `spark-defaults.conf` 
 
 **Ioannis Konstantinou**
 
-📬 Questions / issues: [GitHub Issues](https://github.com/ikons/bigdata-uth/issues)
+📬 Questions / issues: [GitHub Issues](https://github.com/ikons/bigdata-dsml/issues)
