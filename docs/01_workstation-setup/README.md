@@ -287,10 +287,10 @@ java -version
 
 Αφού συμπληρώσετε τη φόρμα του εργαστηρίου, θα λάβετε email με δύο βασικά συνημμένα:
 
-- `vdcloud-k8s.ovpn`
+- `cslab-k8s.ovpn`
 - `config`
 
-Στο provisioning tool του μαθήματος, αυτά παράγονται και αποστέλλονται ακριβώς με αυτά τα ονόματα για το `vdcloud`.
+Στο provisioning tool του μαθήματος, αυτά παράγονται και αποστέλλονται ακριβώς με αυτά τα ονόματα για το `cslab-k8s cloud`.
 
 Αν δεν έχετε ήδη OpenVPN client στα Windows, εγκαταστήστε τον client που χρησιμοποιεί το εργαστήριο. Για τη ροή που περιγράφει και το mail, ο client περιμένει συνήθως τα `.ovpn` αρχεία στον φάκελο:
 
@@ -301,10 +301,10 @@ C:\Users\<windows-username>\OpenVPN\config
 Πρακτικά:
 
 1. αποθηκεύστε και τα δύο συνημμένα πρώτα στον φάκελο `Downloads` των Windows
-2. αντιγράψτε το `vdcloud-k8s.ovpn` στον φάκελο `C:\Users\<windows-username>\OpenVPN\config`
-3. ανοίξτε τον OpenVPN client και συνδεθείτε με το profile `vdcloud-k8s.ovpn`
+2. αντιγράψτε το `cslab-k8s.ovpn` στον φάκελο `C:\Users\<windows-username>\OpenVPN\config`
+3. ανοίξτε τον OpenVPN client και συνδεθείτε με το profile `cslab-k8s.ovpn`
 
-Κάθε φορά που το εργαστήριο σας στείλει νέο `vdcloud-k8s.ovpn`, αντικαθιστάτε το παλιό αρχείο και επανασυνδέεστε.
+Κάθε φορά που το εργαστήριο σας στείλει νέο `cslab-k8s.ovpn`, αντικαθιστάτε το παλιό αρχείο και επανασυνδέεστε.
 
 ### Για τη διαδρομή WSL / Ubuntu
 
@@ -351,11 +351,11 @@ mv ./kubectl ~/.local/bin/kubectl
 kubectl version --client
 ```
 
-## Ρύθμιση VPN και kubeconfig για το `vdcloud`
+## Ρύθμιση VPN και kubeconfig για το `cslab-k8s cloud`
 
 Από το email του εργαστηρίου θα έχετε ήδη κατεβάσει στα Windows:
 
-- το `vdcloud-k8s.ovpn`
+- το `cslab-k8s.ovpn`
 - το συνημμένο `config`
 
 Αφού συνδεθείτε πρώτα στο VPN από τα Windows, περάστε στο WSL και ρυθμίστε το kubeconfig από το συνημμένο αρχείο:
