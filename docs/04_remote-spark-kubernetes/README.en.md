@@ -21,7 +21,7 @@ The recommended software baseline for the course is:
 | Spark client in WSL | `spark-3.5.8-bin-hadoop3` |
 | Hadoop client in WSL | `hadoop-3.4.1` |
 | Spark image on Kubernetes | `apache/spark:3.5.8-scala2.12-java11-python3-ubuntu` |
-| HDFS server on vdcloud | `3.4.1` |
+| HDFS server on cslab-k8s cloud | `3.4.1` |
 
 In other words, the course baseline is:
 
