@@ -21,7 +21,7 @@
 | Spark client στο WSL | `spark-3.5.8-bin-hadoop3` |
 | Hadoop client στο WSL | `hadoop-3.4.1` |
 | Spark image στο Kubernetes | `apache/spark:3.5.8-scala2.12-java11-python3-ubuntu` |
-| HDFS server στο vdcloud | `3.4.1` |
+| HDFS server στο cslab-k8s cloud | `3.4.1` |
 
 Με άλλα λόγια, η βασική έκδοση λογισμικού του μαθήματος είναι:
 
