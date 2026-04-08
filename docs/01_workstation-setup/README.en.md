@@ -279,10 +279,10 @@ An alternative also available is:
 
 After you submit the lab form, you will receive an email with two main attachments:
 
-- `vdcloud-k8s.ovpn`
+- `cslab-k8s.ovpn`
 - `config`
 
-In the course provisioning tool, these are generated and sent with exactly these names for `vdcloud`.
+In the course provisioning tool, these are generated and sent with exactly these names for `cslab-k8 cloud`.
 
 If you do not already have an OpenVPN client on Windows, install the client used by the lab. In the workflow described by the email, the client usually expects `.ovpn` files under:
 
@@ -293,10 +293,10 @@ C:\Users\<windows-username>\OpenVPN\config
 In practice:
 
 1. save both attachments first under your Windows `Downloads` folder
-2. copy `vdcloud-k8s.ovpn` into `C:\Users\<windows-username>\OpenVPN\config`
-3. open the OpenVPN client and connect with the `vdcloud-k8s.ovpn` profile
+2. copy `cslab-k8s.ovpn` into `C:\Users\<windows-username>\OpenVPN\config`
+3. open the OpenVPN client and connect with the `cslab-k8s.ovpn` profile
 
-Whenever the lab sends you a new `vdcloud-k8s.ovpn`, replace the old file and reconnect.
+Whenever the lab sends you a new `cslab-k8s.ovpn`, replace the old file and reconnect.
 
 ### For the WSL / Ubuntu path
 
@@ -343,11 +343,11 @@ mv ./kubectl ~/.local/bin/kubectl
 kubectl version --client
 ```
 
-## Configure VPN and kubeconfig for `vdcloud`
+## Configure VPN and kubeconfig for `cslab-k8 cloud`
 
 From the lab email, you should already have downloaded to Windows:
 
-- `vdcloud-k8s.ovpn`
+- `cslab-k8s.ovpn`
 - the attached `config`
 
 After connecting to the VPN from Windows, switch to WSL and configure kubeconfig from the attached file:
