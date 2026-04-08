@@ -13,6 +13,7 @@ This repository contains code, datasets, and execution guides for **Apache Spark
 - `04` [04_remote-spark-kubernetes](docs/04_remote-spark-kubernetes): Remote Spark execution on a ready Kubernetes cluster from WSL/VPN
 - `05` [05_cluster-queries-rdd-df-sql](docs/05_cluster-queries-rdd-df-sql): The same queries on the cluster with RDD, the DataFrame API, and Spark SQL
 - `06` [06_local-cluster-infrastructure-docker](docs/06_local-cluster-infrastructure-docker): Local Spark + HDFS cluster with Docker Compose
+- `07` [07_final-assignment-practical](docs/07_final-assignment-practical): Practical checklist for the DSML 2026 final assignment (resource tuning, timing, join strategies)
 
 📁 The same guides are also available under [`odigoi/`](./odigoi) in `.docx` format.
 

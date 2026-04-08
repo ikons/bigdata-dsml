@@ -82,5 +82,17 @@
     "source": "docs/05_cluster-queries-rdd-df-sql/README.en.md",
     "output": "odigoi/05_cluster_queries_rdd_df_sql.en.docx",
     "tocTitle": "Table of Contents"
+  },
+  {
+    "id": "final-assignment-el",
+    "source": "docs/07_final-assignment-practical/README.md",
+    "output": "odigoi/07_final_assignment_practical.docx",
+    "tocTitle": "Περιεχόμενα"
+  },
+  {
+    "id": "final-assignment-en",
+    "source": "docs/07_final-assignment-practical/README.en.md",
+    "output": "odigoi/07_final_assignment_practical.en.docx",
+    "tocTitle": "Table of Contents"
   }
 ]

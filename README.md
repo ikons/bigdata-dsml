@@ -12,6 +12,7 @@
 - `04` [04_remote-spark-kubernetes](docs/04_remote-spark-kubernetes): Απομακρυσμένη εκτέλεση Spark σε έτοιμη συστοιχία Kubernetes από WSL/VPN
 - `05` [05_cluster-queries-rdd-df-sql](docs/05_cluster-queries-rdd-df-sql): Τα ίδια ερωτήματα στη συστοιχία με RDD, DataFrame API και Spark SQL
 - `06` [06_local-cluster-infrastructure-docker](docs/06_local-cluster-infrastructure-docker): Τοπική συστοιχία Spark + HDFS με Docker Compose
+- `07` [07_final-assignment-practical](docs/07_final-assignment-practical): Πρακτικός οδηγός για την εξαμηνιαία εργασία DSML 2026 (resources, timing, join strategies)
 
 📁 Εναλλακτικά, όλοι οι οδηγοί είναι διαθέσιμοι και στον φάκελο [`odigoi/`](./odigoi) σε μορφή `.docx`.
 
